@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: consul
+  namespace: hashcorp
+
+spec:
+  rules:
+  - host: consul.redelocal
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: consul
+          servicePort: 8500
